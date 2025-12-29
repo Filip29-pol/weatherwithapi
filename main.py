@@ -9,7 +9,7 @@ option=st.selectbox("Select data to view",("Temperature","Sky"))
 st.subheader(f"{option} for the next {days} days in {place}")
 
 if place:
-    try:
+    #try:
         filtered_data=get_data(place,days)
         if option=="Temperature":
             t= [dict["main"]["temp"]-273.15 for dict in filtered_data]
@@ -24,5 +24,5 @@ if place:
             image_path=[images[condition] for condition in sky_condition]
             print(sky_condition)
             st.image(image_path,width=115)
-    except KeyError:
-            st.write("That place doesn't exist in reality")
+    #except KeyError:
+            #st.write("That place doesn't exist in reality")
