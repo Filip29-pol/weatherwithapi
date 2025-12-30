@@ -9,7 +9,7 @@ def get_data(place, forecasted_days=None):
     url = f"http://api.openweathermap.org/data/2.5/forecast?q={place}&appid={API_KEY}"
     response = requests.get(url)
     data = response.json()
-
+    print(data)
     # Check if the API returned an error
     if "list" not in data:
         print(f"Error from API: {data.get('message', 'Unknown error')}")
